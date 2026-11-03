@@ -186,3 +186,7 @@ body:has(#login:not(.hide)){background:#111214}
 .voltar:focus-visible{outline:3px solid #ff7a84;outline-offset:3px}
 @media(max-width:480px){.voltar{top:14px;left:12px;padding:8px 13px 8px 10px;font-size:.76rem}}
 @media(prefers-reduced-motion:reduce){.voltar{animation:none;opacity:1}}
+
+/* Locais com nome longo: 2 por linha, sem estourar a largura */
+#chLocal{display:grid;grid-template-columns:1fr 1fr}
+#chLocal .chip{min-width:0;overflow-wrap:anywhere}
