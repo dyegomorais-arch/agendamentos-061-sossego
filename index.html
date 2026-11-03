@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>061 | Agendamento de Serviços</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=10">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+<main id="login"><div class="bgfoto"></div><div class="bgov"></div><div class="poeira" id="poeira"></div><div class="arc"></div>
+  <a class="voltar" href="https://dyegomorais-arch.github.io/portaldeos/" aria-label="Voltar ao Portal de OS"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>Portal de OS</a>
+  <form class="card" id="loginForm"><img src="assets/logo-claro.png" alt="Sillion"><div class="os-badge">OS 061</div><h1>Agenda de serviço</h1>
+    <div class="field"><label for="user">E-mail</label><input id="user" type="email" autocomplete="username" required></div>
+    <div class="field"><label for="pass">Senha</label><div class="pw"><input id="pass" type="password" autocomplete="current-password" required><button type="button" class="eye" id="eye" aria-label="Mostrar senha" title="Mostrar/ocultar senha">👁</button></div></div>
+    <p class="err" id="err"></p><button class="btn full" type="submit">Entrar</button></form>
+</main>
+<script>
+(function(){
+  var p=document.getElementById('pass'), e=document.getElementById('eye');
+  e.addEventListener('click',function(){var v=p.type==='password';p.type=v?'text':'password';e.textContent=v?'🙈':'👁';p.focus()});
+  p.addEventListener('keyup',function(ev){var el=document.getElementById('err');if(ev.getModifierState&&ev.getModifierState('CapsLock'))el.textContent='⚠ Caps Lock ativado';else if(el.textContent.indexOf('Caps')>-1)el.textContent=''});
+  var c=document.getElementById('poeira'),r=Math.random;
+  for(var i=0;i<26;i++){var d=document.createElement('i');d.style.cssText='--l:'+r()*100+'%;--s:'+(2+r()*4)+'px;--d:'+(9+r()*10)+'s;--dl:'+(-r()*16)+'s;--x:'+((r()-.5)*160)+'px';c.appendChild(d)}
+})();
+</script>
+<script type="module" src="js/auth.js?v=9"></script>
+</body>
+</html>
